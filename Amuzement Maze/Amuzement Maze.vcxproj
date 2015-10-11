@@ -81,6 +81,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Scenegraph.cpp" />
+    <ClCompile Include="View.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GroupNode.h" />
+    <ClInclude Include="LeafNode.h" />
+    <ClInclude Include="Scenegraph.h" />
+    <ClInclude Include="SceneXMLReader.h" />
+    <ClInclude Include="TransformNode.h" />
+    <ClInclude Include="View.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
