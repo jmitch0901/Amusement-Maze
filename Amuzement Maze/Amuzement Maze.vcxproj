@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClInclude Include="GroupNode.h" />
     <ClInclude Include="LeafNode.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Scenegraph.h" />
     <ClInclude Include="SceneXMLReader.h" />
     <ClInclude Include="TransformNode.h" />
