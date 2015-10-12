@@ -8,7 +8,7 @@ using namespace std;
 Scenegraph::Scenegraph()
 {
     root = NULL;
-	//time=0;
+	time=0;
 }
 
 void Scenegraph::makeScenegraph(Node *r)
@@ -51,7 +51,9 @@ void Scenegraph::draw(stack<glm::mat4>& modelView)
 
 void Scenegraph::animate(float time)
 {
-	
+	//Node* right_arm = root->getNode("right-amusement-arm");
+
+	//(TransformNode) right_arm->setAnimationTransform(glm::rotate(glm::mat4(1.0), time, glm::vec3(0, 1, 0)));
 
 }
 

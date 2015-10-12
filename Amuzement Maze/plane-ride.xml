@@ -113,7 +113,7 @@
                                 </group>
                                 <group name ="all-amusement-arms">
                                     <transform name ="back-amusement-arm">
-                                        <!-- move first beam into correct position-->
+                                        <!-- move beam into correct position-->
                                         <set>
                                             <rotate>90 0 1 0</rotate>
                                             <rotate>30 1 0 0</rotate>
@@ -121,14 +121,14 @@
                                         <group copyof ="right-amusement-arm" />
                                     </transform>
                                     <transform name ="left-amusement-arm">
-                                        <!-- move first beam into correct position-->
+                                        <!-- move beam into correct position-->
                                         <set>
                                             <rotate>180 0 1 0</rotate>
                                         </set>
                                         <group copyof ="right-amusement-arm" />
                                     </transform>
                                     <transform name ="front-amusement-arm">
-                                        <!-- move first beam into correct position-->
+                                        <!-- move beam into correct position-->
                                         <set>
                                             <rotate>270 0 1 0</rotate>
                                             <rotate>-30 1 0 0</rotate>

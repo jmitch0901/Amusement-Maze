@@ -75,9 +75,6 @@
     </Xml>
   </ItemGroup>
   <ItemGroup>
-    <Object Include="models\bottle.obj">
-      <Filter>Resource Files</Filter>
-    </Object>
     <Object Include="models\box.obj">
       <Filter>Resource Files</Filter>
     </Object>
@@ -88,6 +85,9 @@
       <Filter>Resource Files</Filter>
     </Object>
     <Object Include="models\sphere.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
+    <Object Include="models\bottle.obj">
       <Filter>Resource Files</Filter>
     </Object>
   </ItemGroup>

@@ -62,7 +62,9 @@ public:
 
 private:
     Node *root;
+	float time;
 	map<string,graphics::Object *> instances;
+	//vector<TransformNode*> animationNodes;
     GLint objectColorLocation,modelviewLocation;
 };
 
