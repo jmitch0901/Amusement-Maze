@@ -87,10 +87,23 @@
   <ItemGroup>
     <ClInclude Include="GroupNode.h" />
     <ClInclude Include="LeafNode.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Scenegraph.h" />
     <ClInclude Include="SceneXMLReader.h" />
     <ClInclude Include="TransformNode.h" />
     <ClInclude Include="View.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="humanoid-A.xml" />
+    <Xml Include="humanoid-C.xml" />
+    <Xml Include="humanoid-M.xml" />
+    <Xml Include="humanoid-Y.xml" />
+    <Xml Include="humanoid.xml" />
+    <Xml Include="two-humanoids.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="triangles.frag" />
+    <None Include="triangles.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

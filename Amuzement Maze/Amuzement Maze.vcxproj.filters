@@ -44,5 +44,36 @@
     <ClInclude Include="View.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="humanoid.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="humanoid-A.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="humanoid-M.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="humanoid-Y.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="two-humanoids.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="humanoid-C.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="triangles.frag">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="triangles.vert">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
