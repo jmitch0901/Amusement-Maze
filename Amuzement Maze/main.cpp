@@ -105,7 +105,7 @@ void processEvent(sf::Event event,sf::RenderWindow& window)
 	case sf::Event::KeyPressed:
 		switch (event.key.code)
 		{
-		case sf::Keyboard::Escape:							//8===D //(  .  Y  .  )
+		case sf::Keyboard::Escape:
 			window.close();
 			break;
 		case sf::Keyboard::R:
