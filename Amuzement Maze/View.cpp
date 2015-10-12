@@ -24,7 +24,7 @@ View::View()
 
 View::~View()
 {
-    
+    //(  .  Y  .  )
 }
 
 void View::resize(int w, int h)
