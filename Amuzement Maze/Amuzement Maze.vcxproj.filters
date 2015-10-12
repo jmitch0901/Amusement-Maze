@@ -74,4 +74,21 @@
       <Filter>Source Files</Filter>
     </Xml>
   </ItemGroup>
+  <ItemGroup>
+    <Object Include="models\bottle.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
+    <Object Include="models\box.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
+    <Object Include="models\cone.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
+    <Object Include="models\cylinder.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
+    <Object Include="models\sphere.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
+  </ItemGroup>
 </Project>
