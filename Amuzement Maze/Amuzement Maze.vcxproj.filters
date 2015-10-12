@@ -67,6 +67,9 @@
     <Xml Include="humanoid-C.xml">
       <Filter>Resource Files</Filter>
     </Xml>
+    <Xml Include="swing-ride.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
   </ItemGroup>
   <ItemGroup>
     <None Include="triangles.frag">

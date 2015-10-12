@@ -36,7 +36,7 @@ double frame_rate;
 bool mousePressed;
 int mouseX,mouseY;
 
-string filename = "two-humanoids.xml";
+string filename = "swing-ride.xml";
 
 int main(int argc, char *argv[])
 {
