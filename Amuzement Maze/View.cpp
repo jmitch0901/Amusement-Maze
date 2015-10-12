@@ -53,8 +53,11 @@ void View::openFile(string filename)
 {
 	SceneXMLReader reader;
 	cout << "Loading...";
-	reader.importScenegraph(filename,sgraph);
-	cout << "Done" << endl;
+	if(reader.importScenegraph(filename,sgraph)){
+		cout << "Done" << endl;
+	} else{
+		cout << "Invalid XML File" << endl;
+	}
 }
 
 void View::initialize()

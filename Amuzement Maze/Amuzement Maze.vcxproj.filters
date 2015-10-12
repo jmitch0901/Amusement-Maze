@@ -48,4 +48,47 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="humanoid.xml">
+      <Filter>Source Files</Filter>
+    </Xml>
+    <Xml Include="humanoid-A.xml">
+      <Filter>Source Files</Filter>
+    </Xml>
+    <Xml Include="humanoid-M.xml">
+      <Filter>Source Files</Filter>
+    </Xml>
+    <Xml Include="humanoid-Y.xml">
+      <Filter>Source Files</Filter>
+    </Xml>
+    <Xml Include="plane-ride.xml">
+      <Filter>Source Files</Filter>
+    </Xml>
+    <Xml Include="two-humanoids.xml">
+      <Filter>Source Files</Filter>
+    </Xml>
+    <Xml Include="humanoid-C.xml">
+      <Filter>Source Files</Filter>
+    </Xml>
+    <Xml Include="plane-ride-copy.xml">
+      <Filter>Source Files</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="models\bottle.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
+    <Object Include="models\box.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
+    <Object Include="models\cone.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
+    <Object Include="models\cylinder.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
+    <Object Include="models\sphere.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
+  </ItemGroup>
 </Project>
