@@ -36,7 +36,7 @@ double frame_rate;
 bool mousePressed;
 int mouseX,mouseY;
 
-string filename = "two-humanoids.xml";
+string filename = "plane-ride.xml";
 
 int main(int argc, char *argv[])
 {
@@ -105,7 +105,7 @@ void processEvent(sf::Event event,sf::RenderWindow& window)
 	case sf::Event::KeyPressed:
 		switch (event.key.code)
 		{
-		case sf::Keyboard::Escape:							//8===D //(  .  Y  .  )
+		case sf::Keyboard::Escape:
 			window.close();
 			break;
 		case sf::Keyboard::R:

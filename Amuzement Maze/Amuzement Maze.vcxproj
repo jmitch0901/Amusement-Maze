@@ -71,12 +71,15 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../graphics/headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>../../graphics/lib/SFML;../../graphics/lib/GL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-main.lib;sfml-graphics.lib;sfml-system.lib;sfml-window.lib;opengl32.lib;glew32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -87,10 +90,21 @@
   <ItemGroup>
     <ClInclude Include="GroupNode.h" />
     <ClInclude Include="LeafNode.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Scenegraph.h" />
     <ClInclude Include="SceneXMLReader.h" />
     <ClInclude Include="TransformNode.h" />
     <ClInclude Include="View.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="humanoid-A.xml" />
+    <Xml Include="humanoid-C.xml" />
+    <Xml Include="humanoid-M.xml" />
+    <Xml Include="humanoid-Y.xml" />
+    <Xml Include="humanoid.xml" />
+    <Xml Include="plane-ride-copy.xml" />
+    <Xml Include="plane-ride.xml" />
+    <Xml Include="two-humanoids.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
