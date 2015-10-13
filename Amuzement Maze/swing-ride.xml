@@ -42,7 +42,6 @@
                 <set><!--Translate the whole thing up when done-->
                   <translate>0 2.35 0</translate>
                 </set>
-
                 <!--Start creating the top rotating part-->
                 <group name="top-dish">
                   <transform>
@@ -57,6 +56,32 @@
                   </transform>
                 </group>                                    
               </transform>
+              
+              
+
+              <group name="rope">
+                <transform>
+                  <set>
+                    <scale>.01 1.75 .01</scale>
+                    <rotate>35 0 0 1</rotate>
+                    <translate>2.5 .90 0</translate>
+                  </set>
+                  <object instanceof="cylinder">
+                    <material>
+                      <color>1 1 0</color>
+                    </material>
+                  </object>
+                </transform>
+              </group>
+
+              <group name="rope2" from="rope">
+                <transform>
+                  <set>
+                    <scale>10 10 10</scale>
+                  </set>
+              
+                </transform>
+              </group>
               
               
               

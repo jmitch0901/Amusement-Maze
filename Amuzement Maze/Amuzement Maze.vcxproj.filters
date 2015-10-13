@@ -70,6 +70,9 @@
     <Xml Include="swing-ride.xml">
       <Filter>Resource Files</Filter>
     </Xml>
+    <Xml Include="swing-ridev2.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
   </ItemGroup>
   <ItemGroup>
     <None Include="triangles.frag">

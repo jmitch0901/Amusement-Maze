@@ -1,0 +1,79 @@
+<scene>
+  <instance name="sphere" path="models/sphere" />
+  <instance name="box" path="models/box" />
+  <instance name="cylinder" path="models/cylinder" />
+  <instance name="cone" path="models/cone" />
+
+  <transform>
+    <set>
+      <scale>70 70 70</scale>
+    </set>
+
+    <group name="chair">
+      <transform>
+        <!--Chair Back-->
+        <set>
+          <scale>.9 1.5 .1</scale>
+        </set>
+        <object instanceof="box">
+          <material>
+            <color>1 0 1</color>
+          </material>
+        </object>
+      </transform>
+
+      <transform>
+        <!--Chair Cushion-->
+        <set>
+          <scale>.9 .5 .4</scale>
+          <translate>0 -.5 .25</translate>
+        </set>
+        <object instanceof="box">
+          <material>
+            <color>1 0 1</color>
+          </material>
+        </object>
+      </transform>
+
+      <group name="left-arm-rest">
+        <transform>
+          <!--Left Arm Rest-->
+          <set>
+            <scale>.1 .25 .4</scale>
+            <translate>-.4 -.125 .25</translate>
+          </set>
+          <object instanceof="box">
+            <material>
+              <color>1 0 1</color>
+            </material>
+          </object>
+        </transform>
+      </group>
+
+      <transform><!--Right arm rest-->
+        <set>
+          <translate>.8 0 0</translate>
+        </set>
+        <group name="right-arm-rest" copyof="left-arm-rest"></group>
+      </transform>
+
+      <transform>
+        <set>
+          <scale>.05 .7 .05</scale>
+          <rotate>90 0 0 1</rotate>
+          <translate>.35 -.1 .4</translate>
+        </set>
+        <object instanceof="cylinder">
+          <material>
+            <color>1 1 0</color>
+          </material>
+        </object>
+      </transform>
+
+      
+      
+      
+    </group>
+  </transform>
+
+</scene>

@@ -100,6 +100,7 @@
     <Xml Include="humanoid-Y.xml" />
     <Xml Include="humanoid.xml" />
     <Xml Include="swing-ride.xml" />
+    <Xml Include="swing-ridev2.xml" />
     <Xml Include="two-humanoids.xml" />
   </ItemGroup>
   <ItemGroup>
