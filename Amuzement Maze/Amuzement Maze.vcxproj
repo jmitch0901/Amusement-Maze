@@ -94,6 +94,7 @@
     <ClInclude Include="View.h" />
   </ItemGroup>
   <ItemGroup>
+    <Xml Include="full-scene.xml" />
     <Xml Include="scene-maze.xml" />
     <Xml Include="swing-ridev2.xml" />
   </ItemGroup>

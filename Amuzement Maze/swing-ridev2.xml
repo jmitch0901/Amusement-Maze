@@ -7,7 +7,7 @@
 
     <transform>
       <set>
-        <scale>2 2 2</scale>
+        <scale>3 3 3</scale>
       </set>
 
       <group name="full-model">
@@ -189,7 +189,7 @@
           </set>
           <object instanceof="cylinder">
             <material>
-              <color>1 0 0</color>
+              <color>1 1 0</color>
             </material>
           </object>
         </transform>

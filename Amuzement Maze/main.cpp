@@ -36,7 +36,7 @@ double frame_rate;
 bool mousePressed;
 int mouseX,mouseY;
 
-string filename = "scene-maze.xml";
+string filename = "full-scene.xml";
 
 int main(int argc, char *argv[])
 {
@@ -199,7 +199,7 @@ void display(sf::RenderWindow *window)
 
 	str << "Frame rate " << frame_rate;
 	// Draw some text on top of our OpenGL object
-	drawText(window,str.str(),window->getSize().x,20);
+	//drawText(window,str.str(),window->getSize().x,20);
     
 	
 	// Finally, display the rendered frame on screen
@@ -235,8 +235,8 @@ void init(string& filename)
 	v.initialize();
 	v.openFile(filename);
 
-	if (!font.loadFromFile("resources/GARA.ttf"))
-		return;
+	//if (!font.loadFromFile("resources/GARA.ttf"))
+		//return;
 
 }
 
