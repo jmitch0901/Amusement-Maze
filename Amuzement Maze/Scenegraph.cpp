@@ -53,9 +53,7 @@ void Scenegraph::draw(stack<glm::mat4>& modelView)
 void Scenegraph::animate(float time)
 {
 
-	
-
-	TransformNode *tn2 = dynamic_cast<TransformNode *>(root->getNode("transform-movable-stem"));
+	/*TransformNode *tn2 = dynamic_cast<TransformNode *>(root->getNode("transform-movable-stem"));
 
 	if(tn2!=NULL){
 		tn2->setAnimationTransform(glm::translate(glm::mat4(1.0f),glm::vec3(0,glm::sin(time)*30,0)));
@@ -71,7 +69,7 @@ void Scenegraph::animate(float time)
 
 	}
 
-	tn = NULL;
+	tn = NULL;*/
 
 
 }
