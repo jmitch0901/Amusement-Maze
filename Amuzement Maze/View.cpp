@@ -89,7 +89,7 @@ void View::initialize()
 void View::draw()
 {
 	time += 0.1;
-	sgraph.animate(time);
+	sgraph.animate2(time);
     /*
      *The modelview matrix for the View class is going to store the world-to-view transformation
      *This effectively is the transformation that changes when the camera parameters chang

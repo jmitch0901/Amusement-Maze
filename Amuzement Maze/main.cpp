@@ -36,7 +36,7 @@ double frame_rate;
 bool mousePressed;
 int mouseX,mouseY;
 
-string filename = "plane-ride.xml";
+string filename = "super-fun-ride.xml";
 
 int main(int argc, char *argv[])
 {
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 	frame_rate = 0;
     // Request a 32-bits depth buffer when creating the window
     sf::ContextSettings contextSettings;
-    contextSettings.depthBits = 32;
+   // contextSettings.depthBits = 16;
 	contextSettings.majorVersion = 4;
 	contextSettings.minorVersion = 0;
 

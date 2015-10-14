@@ -53,12 +53,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../graphics/headers</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../graphics/headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../graphics/lib/SFML;../../graphics/lib/GL</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../graphics/lib/SFML;../../graphics/lib/GL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;opengl32.lib;glew32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -102,16 +102,13 @@
     <Xml Include="humanoid-M.xml" />
     <Xml Include="humanoid-Y.xml" />
     <Xml Include="humanoid.xml" />
-    <Xml Include="plane-ride-copy.xml" />
-    <Xml Include="plane-ride.xml" />
+    <Xml Include="plane-ride-copy.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="super-fun-ride.xml">
+      <SubType>Designer</SubType>
+    </Xml>
     <Xml Include="two-humanoids.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Object Include="models\bottle.obj" />
-    <Object Include="models\box.obj" />
-    <Object Include="models\cone.obj" />
-    <Object Include="models\cylinder.obj" />
-    <Object Include="models\sphere.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
