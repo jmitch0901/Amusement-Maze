@@ -18,12 +18,11 @@
                     <scale> 0.0125 0.0125 0.0125</scale>
                 </set>
                 <group>
-                    <transform name ="animate-me-m8">
-                        <set>
-                            <translate>0 20 0</translate>
-                        </set>
                     <group name ="central-pivot">
-                        
+                        <transform name ="animate-me-m8">
+                            <set>
+                                <translate>0 20 0</translate>
+                            </set>
                             <group>
                                 <group name ="all-amusement-arms">
                                     <transform name ="animate-me-2">
@@ -170,9 +169,8 @@
                                     </transform>
                                 </group>
                             </group>
-                        
+                        </transform>
                     </group>
-                    </transform>
                     <group name ="middle-structure">
                         <transform name ="bottom-cone">
                             <set>

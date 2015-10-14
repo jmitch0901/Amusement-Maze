@@ -9,7 +9,8 @@ using namespace std;
 Scenegraph::Scenegraph()
 {
     root = NULL;
-	time=0;
+	//time=0;
+	central_spin = ra = ba = la = fa = NULL;
 }
 
 void Scenegraph::makeScenegraph(Node *r)
@@ -23,6 +24,8 @@ void Scenegraph::makeScenegraph(Node *r)
 	if (this->root!=NULL)
 		this->root->setScenegraph(this);
 
+	//central_spin = ra = ba = la = fa = NULL;
+	initAnimate();
 }
 
 
@@ -50,48 +53,31 @@ void Scenegraph::draw(stack<glm::mat4>& modelView)
     }
 }
 
+void Scenegraph::initAnimate(){
+
+	central_spin = dynamic_cast<TransformNode *>(root->getNode("animate-me-m8"));
+
+	ra = dynamic_cast<TransformNode *>(root->getNode("right-amusement-arm"));
+	ba = dynamic_cast<TransformNode *>(root->getNode("back-amusement-arm"));
+	la = dynamic_cast<TransformNode *>(root->getNode("left-amusement-arm"));
+	fa = dynamic_cast<TransformNode *>(root->getNode("front-amusement-arm"));
+}
+
 void Scenegraph::animate2(float time)
 {
 
-	/*GroupNode * t = (dynamic_cast<GroupNode *>(root));
-	TransformNode * t2 = dynamic_cast<TransformNode *>(t->getNode("leftleg"));
-	t2->setAnimationTransform(glm::rotate(glm::mat4(1.0),1.10f*time, glm::vec3(0,1,0)));*/
-	
-	//TransformNode* central_spin = dynamic_cast<TransformNode *>(root->getNode("animate-me-m8"));
-
-	//TransformNode* central_spin = dynamic_cast<TransformNode *>(root->getNode("leftleg"));
-
-	/*GroupNode * unit = dynamic_cast<GroupNode *>(root->getNode("unit-height-humanoid"));
-
-	GroupNode * lowerbody = dynamic_cast<GroupNode *>(unit->getNode("lowerbody"));
-
-	TransformNode * leftleg = dynamic_cast<TransformNode *>(lowerbody->getNode("leftleg"));
-
-	leftleg->setAnimationTransform(glm::rotate(glm::mat4(1.0),1.10f*time, glm::vec3(0,1,0)));*/
-
-
-
-
-
-	// vvvvvvvvvvvvvvvvvv---- code should work ----vvvvvvvvvvvvvvvvvvvvvvvvv
-
-
-
-
-
-
 	float PI = 3.14159f;
 
-	TransformNode* central_spin = dynamic_cast<TransformNode *>(root->getNode("animate-me-m8"));
+	//TransformNode* central_spin = dynamic_cast<TransformNode *>(root->getNode("animate-me-m8"));
 
 	if(central_spin!=NULL){
 		central_spin->setAnimationTransform(glm::rotate(glm::mat4(1.0),time/75.0f, glm::vec3(0,1,0)));
 	}
 
-	TransformNode* ra = dynamic_cast<TransformNode *>(root->getNode("right-amusement-arm"));
+	/*TransformNode* ra = dynamic_cast<TransformNode *>(root->getNode("right-amusement-arm"));
 	TransformNode* ba = dynamic_cast<TransformNode *>(root->getNode("back-amusement-arm"));
 	TransformNode* la = dynamic_cast<TransformNode *>(root->getNode("left-amusement-arm"));
-	TransformNode* fa = dynamic_cast<TransformNode *>(root->getNode("front-amusement-arm"));
+	TransformNode* fa = dynamic_cast<TransformNode *>(root->getNode("front-amusement-arm"));*/
 
 	if(ra!=NULL){
 		ra->setAnimationTransform(glm::rotate(glm::mat4(1.0),-cos(time/50.0f)*(PI / 12.0f) + (PI / 12.0f), glm::vec3(0,0,1)));

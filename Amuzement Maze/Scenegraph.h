@@ -10,6 +10,7 @@ using namespace std;
 #include <GL/gl.h>
 #include <utils/Object.h>
 #include "Node.h"
+#include "TransformNode.h"
 
 class Scenegraph
 {    
@@ -20,6 +21,7 @@ public:
     ~Scenegraph();
     void makeScenegraph(Node *root);
     void initShaderProgram(GLint shaderProgram);
+	void initAnimate();
     void draw(stack<glm::mat4>& modelView);
 
 	void addInstance(graphics::Object *in)
@@ -63,6 +65,7 @@ public:
 private:
     Node *root;
 	float time;
+	TransformNode *central_spin, *ra, *ba, *la, *fa;
 	map<string,graphics::Object *> instances;
 	//vector<TransformNode*> animationNodes;
     GLint objectColorLocation,modelviewLocation;
