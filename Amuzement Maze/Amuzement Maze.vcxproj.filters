@@ -49,27 +49,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="humanoid.xml">
-      <Filter>Resource Files</Filter>
-    </Xml>
-    <Xml Include="humanoid-A.xml">
-      <Filter>Resource Files</Filter>
-    </Xml>
-    <Xml Include="humanoid-M.xml">
-      <Filter>Resource Files</Filter>
-    </Xml>
-    <Xml Include="humanoid-Y.xml">
-      <Filter>Resource Files</Filter>
-    </Xml>
-    <Xml Include="two-humanoids.xml">
-      <Filter>Resource Files</Filter>
-    </Xml>
-    <Xml Include="humanoid-C.xml">
-      <Filter>Resource Files</Filter>
-    </Xml>
-    <Xml Include="swing-ride.xml">
-      <Filter>Resource Files</Filter>
-    </Xml>
     <Xml Include="swing-ridev2.xml">
       <Filter>Resource Files</Filter>
     </Xml>
