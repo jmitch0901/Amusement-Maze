@@ -52,6 +52,9 @@
     <Xml Include="swing-ridev2.xml">
       <Filter>Resource Files</Filter>
     </Xml>
+    <Xml Include="scene-maze.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
   </ItemGroup>
   <ItemGroup>
     <None Include="triangles.frag">
