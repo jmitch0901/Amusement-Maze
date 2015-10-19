@@ -13,7 +13,7 @@
 #include <SFML/Graphics.hpp>
 #include <GL/glew.h>
 #include <SFML/OpenGL.hpp>
-#include "View.h"
+#include "ThreeDView.h"
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -28,7 +28,7 @@ void display(sf::RenderWindow *window);
 void processEvent(sf::Event event,sf::RenderWindow& window);
 void drawText(sf::RenderWindow& window,string text,int x,int y);
 
-View v; //an object to our View class that encapsulates everything that we do.
+ThreeDView v; //an object to our View class that encapsulates everything that we do.
 sf::Font font;
 sf::Clock sfclock;
 int frames;

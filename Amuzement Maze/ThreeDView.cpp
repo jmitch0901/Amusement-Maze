@@ -1,6 +1,6 @@
 #define GLM_FORCE_RADIANS
 #define GLM_SWIZZLE
-#include "View.h"
+#include "ThreeDView.h"
 #include <GL/glew.h>
 #include <cstdlib>
 #include <fstream>
@@ -16,18 +16,18 @@ using namespace std;
 
 #include "SceneXMLReader.h"
 
-View::View()
+ThreeDView::ThreeDView()
 {
     trackballTransform = glm::mat4(1.0);
 	time = 0.0;
 }
 
-View::~View()
+ThreeDView::~ThreeDView()
 {
     
 }
 
-void View::resize(int w, int h)
+void ThreeDView::resize(int w, int h)
 {
     //record the new dimensions
     WINDOW_WIDTH = w;
@@ -49,7 +49,7 @@ void View::resize(int w, int h)
     proj.push(glm::perspective(120.0f*3.14159f/180,(float)WINDOW_WIDTH/WINDOW_HEIGHT,0.1f,10000.0f));
 }
 
-void View::openFile(string filename)
+void ThreeDView::openFile(string filename)
 {
 	SceneXMLReader reader;
 	cout << "Loading...";
@@ -57,7 +57,7 @@ void View::openFile(string filename)
 	cout << "Done" << endl;
 }
 
-void View::initialize()
+void ThreeDView::initialize()
 {
     //populate our shader information. The two files below are present in this project.
     ShaderInfo shaders[] =
@@ -81,7 +81,7 @@ void View::initialize()
     
 }
 
-void View::draw()
+void ThreeDView::draw()
 {
 	time += 0.001f;
 	if(time==1){
@@ -123,12 +123,12 @@ void View::draw()
     modelview.pop();
 }
 
-void View::mousepress(int x, int y)
+void ThreeDView::mousepress(int x, int y)
 {
     prev_mouse = glm::vec2(x,y);
 }
 
-void View::mousemove(int x, int y)
+void ThreeDView::mousemove(int x, int y)
 {
     int dx,dy;
 
@@ -155,7 +155,7 @@ void View::mousemove(int x, int y)
  *This function is standard and should not change from one program to the next.
  */
 
-GLuint View::createShaders(ShaderInfo *shaders)
+GLuint ThreeDView::createShaders(ShaderInfo *shaders)
 {
     ifstream file;
     GLuint shaderProgram;
@@ -226,7 +226,7 @@ GLuint View::createShaders(ShaderInfo *shaders)
     return shaderProgram;
 }
 
-void View::printShaderInfoLog(GLuint shader)
+void ThreeDView::printShaderInfoLog(GLuint shader)
 {
     int infologLen = 0;
     int charsWritten = 0;
@@ -248,7 +248,7 @@ void View::printShaderInfoLog(GLuint shader)
 //	printOpenGLError();
 }
 
-void View::getOpenGLVersion(int *major,int *minor)
+void ThreeDView::getOpenGLVersion(int *major,int *minor)
 {
     const char *verstr = (const char *)glGetString(GL_VERSION);
     if ((verstr == NULL) || (sscanf_s(verstr,"%d.%d",major,minor)!=2))
@@ -257,7 +257,7 @@ void View::getOpenGLVersion(int *major,int *minor)
     }
 }
 
-void View::getGLSLVersion(int *major,int *minor)
+void ThreeDView::getGLSLVersion(int *major,int *minor)
 {
     int gl_major,gl_minor;
 

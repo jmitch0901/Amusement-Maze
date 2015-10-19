@@ -21,7 +21,7 @@
     <ClCompile Include="Scenegraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="View.cpp">
+    <ClCompile Include="ThreeDView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,10 +41,10 @@
     <ClInclude Include="TransformNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="View.h">
+    <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
+    <ClInclude Include="ThreeDView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

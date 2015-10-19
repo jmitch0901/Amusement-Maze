@@ -82,7 +82,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Scenegraph.cpp" />
-    <ClCompile Include="View.cpp" />
+    <ClCompile Include="ThreeDView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GroupNode.h" />
@@ -91,7 +91,7 @@
     <ClInclude Include="Scenegraph.h" />
     <ClInclude Include="SceneXMLReader.h" />
     <ClInclude Include="TransformNode.h" />
-    <ClInclude Include="View.h" />
+    <ClInclude Include="ThreeDView.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="full-scene.xml" />
