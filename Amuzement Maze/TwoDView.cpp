@@ -94,7 +94,8 @@ void TwoDView::initialize(string fileName, string pathFile)
 		}
 	}
 
-
+	cout << "row 34: " << path[34][25].row << ", col 25: " << path[34][25].col << endl;
+	cout << "row 0: " << path[0][1].row << ", col 1: " << path[0][1].col << endl;
 	pushPath(start[0], start[1]);
 
     
@@ -569,6 +570,7 @@ void TwoDView::parsePathFile(string pathFile){
 		ss >> nxt.col;
 
 		path[st.row][st.col] = nxt;
+		ss.clear();
 	}
 
 	ifs.close();
@@ -612,27 +614,27 @@ void TwoDView::pushPath(int i, int j){
 		bottomLeftVert = topLeftVert + col + 1;
 		bottomRightVert = topLeftVert + col + 2;
 
-		int vertX = 0, vertY = 0;
+		float vertX = 0, vertY = 0;
 
 		if(start[0] == i && start[1] == j){
 			if(i == 0){
-				//top = true;
+				//top entrance
 				vertY = vdata[topLeftVert].position[1];
-				vertX = (vdata[topLeftVert].position[0] + vdata[topRightVert].position[0]) / 2.0;
+				vertX = (vdata[topLeftVert].position[0] + vdata[topRightVert].position[0]) / 2.0f;
 
 			}else if(i == row - 1){
-				//bottom = true;
+				//bottom entrance
 				vertY = vdata[bottomLeftVert].position[1];
-				vertX = (vdata[bottomLeftVert].position[0] + vdata[bottomRightVert].position[0]) / 2.0;
+				vertX = (vdata[bottomLeftVert].position[0] + vdata[bottomRightVert].position[0]) / 2.0f;
 
 			}else if(j == 0){
-				//left = true;
-				vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0;
+				//left entrance
+				vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0f;
 				vertX = vdata[topLeftVert].position[0];
 
 			}else if(j == col - 1){
-				//right = true;
-				vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0;
+				//right entrance
+				vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0f;
 				vertX = vdata[topRightVert].position[0];
 
 			}
@@ -659,8 +661,8 @@ void TwoDView::pushPath(int i, int j){
 		vdata.push_back(v2);
 		totalVerts = vdata.size() - 1;
 
-		vdata[totalVerts].position[0] = (vdata[bottomLeftVert].position[0] + vdata[bottomRightVert].position[0]) / 2.0;
-		vdata[totalVerts].position[1] = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0;
+		vdata[totalVerts].position[0] = (vdata[bottomLeftVert].position[0] + vdata[bottomRightVert].position[0]) / 2.0f;
+		vdata[totalVerts].position[1] = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0f;
 		vdata[totalVerts].position[2] = 0;
 		vdata[totalVerts].position[3] = 1.0f;
 
@@ -671,26 +673,48 @@ void TwoDView::pushPath(int i, int j){
 		indices.push_back(totalVerts);
 		indices.push_back(totalVerts);
 
-		if(i == path[i][j].row - 1){
+		if(i == path[i][j].row + 1){
 			//top exit
 			vertY = vdata[topLeftVert].position[1];
-			vertX = (vdata[topLeftVert].position[0] + vdata[topRightVert].position[0]) / 2.0;
+			vertX = (vdata[topLeftVert].position[0] + vdata[topRightVert].position[0]) / 2.0f;
 
-		} else if(i == path[i][j].row + 1){
+		} else if(i == path[i][j].row - 1){
 			//bottom exit
 			vertY = vdata[bottomLeftVert].position[1];
-			vertX = (vdata[bottomLeftVert].position[0] + vdata[bottomRightVert].position[0]) / 2.0;
+			vertX = (vdata[bottomLeftVert].position[0] + vdata[bottomRightVert].position[0]) / 2.0f;
 
-		} else if(j == path[i][j].col - 1){
+		} else if(j == path[i][j].col + 1){
 			//left exit
-			vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0;
+			vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0f;
 			vertX = vdata[topLeftVert].position[0];
 
-		} else if(j == path[i][j].row + 1){
+		} else if(j == path[i][j].col - 1){
 			//right exit
-			vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0;
+			vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0f;
 			vertX = vdata[topRightVert].position[0];
 
+		} else if((path[i][j].row == 0 && path[i][j].col == -1) || (path[i][j].row == -1 && path[i][j].col == 0)){
+			if(i == 0){
+				//top exit maze
+				vertY = vdata[topLeftVert].position[1];
+				vertX = (vdata[topLeftVert].position[0] + vdata[topRightVert].position[0]) / 2.0f;
+
+			}else if(i == row - 1){
+				//bottom exit maze
+				vertY = vdata[bottomLeftVert].position[1];
+				vertX = (vdata[bottomLeftVert].position[0] + vdata[bottomRightVert].position[0]) / 2.0f;
+
+			}else if(j == 0){
+				//left exit maze
+				vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0f;
+				vertX = vdata[topLeftVert].position[0];
+
+			}else if(j == col - 1){
+				//right exit maze
+				vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0f;
+				vertX = vdata[topRightVert].position[0];
+
+			}
 		}
 
 		VAttribs v3;
@@ -710,6 +734,7 @@ void TwoDView::pushPath(int i, int j){
 		if(!((path[i][j].row == 0 && path[i][j].col == -1) || (path[i][j].row == -1 && path[i][j].col == 0))){
 			indices.push_back(totalVerts);
 		}
+
 		pushPath(path[i][j].row, path[i][j].col);
 	}
 }
