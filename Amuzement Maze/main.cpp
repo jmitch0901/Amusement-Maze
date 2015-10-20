@@ -36,6 +36,8 @@ double frame_rate;
 bool mousePressed;
 int mouseX,mouseY;
 
+int width, height, startX, startY;
+
 string filename = "full-scene.xml";
 
 int main(int argc, char *argv[])
@@ -183,7 +185,17 @@ void display(sf::RenderWindow *window)
 	glClearColor(0,0,0,0);
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT); //this command actually clears the window.
 	glEnable(GL_DEPTH_TEST);
+	glViewport(0,0,width,height);
 	v.draw(); //simply delegate to our view class that has all the data and does all the rendering
+	
+
+	glScissor(startX,startY,width,height);
+	glEnable(GL_SCISSOR_TEST);
+	glClearColor(1,1,1,1);
+	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+	glViewport(startX,startY,width,height);
+	v.draw();
+	glDisable(GL_SCISSOR_TEST);
 
 	if (frames>500)
 	{
@@ -215,12 +227,22 @@ void display(sf::RenderWindow *window)
  **/
 void resize(int w,int h)
 {
+
+	width=w;
+	height=h;
+	startX = (2.0f/3.0f)*w;
+	startY = (2.0f/3.0f)*h;
+	
     //delegate to our view class.
     v.resize(w,h);
 
     //sets the viewport to cover the entire area of the resized window
     //glViewport(leftx,topy,width,height)
-    glViewport(0,0,w,h);
+    //glViewport(0,0,w,h);
+
+
+	
+	
 }
 
 void init(string& filename)
