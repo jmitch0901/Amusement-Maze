@@ -85,7 +85,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Scenegraph.cpp" />
-    <ClCompile Include="View.cpp" />
+    <ClCompile Include="ThreeDView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GroupNode.h" />
@@ -93,8 +93,8 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="Scenegraph.h" />
     <ClInclude Include="SceneXMLReader.h" />
+    <ClInclude Include="ThreeDView.h" />
     <ClInclude Include="TransformNode.h" />
-    <ClInclude Include="View.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="humanoid-A.xml" />

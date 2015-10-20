@@ -49,22 +49,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="swing-ridev2.xml">
-      <Filter>Resource Files</Filter>
-    </Xml>
-    <Xml Include="scene-maze.xml">
-      <Filter>Resource Files</Filter>
-    </Xml>
-    <Xml Include="full-scene.xml">
-      <Filter>Resource Files</Filter>
-    </Xml>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="triangles.frag">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="triangles.vert">
-      <Filter>Source Files</Filter>
-    </None>
+    <Xml Include="humanoid-A.xml" />
+    <Xml Include="humanoid-C.xml" />
+    <Xml Include="humanoid-M.xml" />
+    <Xml Include="humanoid-Y.xml" />
+    <Xml Include="humanoid.xml" />
+    <Xml Include="plane-ride-copy.xml" />
+    <Xml Include="super-fun-ride.xml" />
+    <Xml Include="two-humanoids.xml" />
   </ItemGroup>
 </Project>

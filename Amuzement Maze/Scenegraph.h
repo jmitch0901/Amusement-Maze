@@ -30,7 +30,7 @@ public:
 			instances[in->getName()] = in;
 	}
 
-	void animate2(float t);
+	void animate(float t);
 
 	graphics::Object *getInstance(string name)
 	{
