@@ -227,14 +227,18 @@ void display(sf::RenderWindow *window)
  **/
 void resize(int w,int h)
 {
-
+	//delegate to our view class.
+    v.resize(w,h);
 	width=w;
 	height=h;
+
+
+
+
 	startX = (2.0f/3.0f)*w;
 	startY = (2.0f/3.0f)*h;
 	
-    //delegate to our view class.
-    v.resize(w,h);
+    
 
     //sets the viewport to cover the entire area of the resized window
     //glViewport(leftx,topy,width,height)
