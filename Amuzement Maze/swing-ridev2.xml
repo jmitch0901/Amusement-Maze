@@ -1,3 +1,4 @@
+<!--Swing Ride by Jonathan Mitchell (Ride with piston going up and down while swings rotate on top blue disk)-->
 <scene>
   <instance name="sphere" path="models/sphere" />
   <instance name="box" path="models/box" />
