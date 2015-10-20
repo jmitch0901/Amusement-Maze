@@ -58,4 +58,9 @@
     <Xml Include="super-fun-ride.xml" />
     <Xml Include="two-humanoids.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="maze-50x50.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

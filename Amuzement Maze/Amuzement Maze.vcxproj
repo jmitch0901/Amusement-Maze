@@ -110,6 +110,9 @@
     </Xml>
     <Xml Include="two-humanoids.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="maze-50x50.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
