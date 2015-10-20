@@ -185,6 +185,13 @@ void display(sf::RenderWindow *window)
 	glEnable(GL_DEPTH_TEST);
 	v.draw(); //simply delegate to our view class that has all the data and does all the rendering
 
+	//glViewport(600,400,200,200);
+
+
+
+
+
+
 	if (frames>500)
 	{
 		sf::Time t = sfclock.getElapsedTime();
@@ -218,9 +225,20 @@ void resize(int w,int h)
     //delegate to our view class.
     v.resize(w,h);
 
+	int smallRect;
+	if(w > h){
+		smallRect = h / 6;
+	} else{
+		smallRect = w / 6;
+	}
+
     //sets the viewport to cover the entire area of the resized window
-    //glViewport(leftx,topy,width,height)
+    //glViewport(leftx,bottomy,width,height)
     glViewport(0,0,w,h);
+
+	glEnable(GL_SCISSOR_TEST);
+
+	glScissor(w - smallRect, h - smallRect, smallRect, smallRect);
 }
 
 void init(string& filename)
