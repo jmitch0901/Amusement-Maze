@@ -14,6 +14,7 @@
 #include <GL/glew.h>
 #include <SFML/OpenGL.hpp>
 #include "ThreeDView.h"
+#include "TwoDView.h"
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -29,6 +30,7 @@ void processEvent(sf::Event event,sf::RenderWindow& window);
 void drawText(sf::RenderWindow& window,string text,int x,int y);
 
 ThreeDView v; //an object to our View class that encapsulates everything that we do.
+TwoDView v2;
 sf::Font font;
 sf::Clock sfclock;
 int frames;
@@ -194,7 +196,7 @@ void display(sf::RenderWindow *window)
 	glClearColor(1,1,1,1);
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glViewport(startX,startY,width-startX,height-startY);
-	v.draw();
+	v2.draw();
 	glDisable(GL_SCISSOR_TEST);
 
 	if (frames>500)
@@ -229,6 +231,9 @@ void resize(int w,int h)
 {
 	//delegate to our view class.
     v.resize(w,h);
+
+	v2.resize(w,h);
+
 	width=w;
 	height=h;
 
@@ -260,6 +265,8 @@ void init(string& filename)
     //delegate to our view class to do all the initializing
 	v.initialize();
 	v.openFile(filename);
+
+	v2.initialize("maze-50x50.txt", "maze-50x50-paths.txt");
 
 	//if (!font.loadFromFile("resources/GARA.ttf"))
 		//return;

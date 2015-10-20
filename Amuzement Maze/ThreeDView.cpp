@@ -84,9 +84,6 @@ void ThreeDView::initialize()
 void ThreeDView::draw()
 {
 	time += 0.01f;
-	if(time==1){
-		time=0.001f;
-	}
 	sgraph.animate(time);
     /*
      *The modelview matrix for the View class is going to store the world-to-view transformation
@@ -99,7 +96,7 @@ void ThreeDView::draw()
 	GLuint a;
 
     modelview.push(glm::mat4(1.0));
-	modelview.top() = modelview.top() * glm::lookAt(glm::vec3(0,250,250),glm::vec3(0,0,0),glm::vec3(0,1,0)) * trackballTransform;
+	modelview.top() = modelview.top() * glm::lookAt(glm::vec3(0,250,350),glm::vec3(0,0,0),glm::vec3(0,1,0)) * trackballTransform;
 
 	glUniformMatrix4fv(projectionLocation,1,GL_FALSE,glm::value_ptr(proj.top()));
 	/*
