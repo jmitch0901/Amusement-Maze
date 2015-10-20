@@ -97,6 +97,7 @@
     <ClInclude Include="TransformNode.h" />
   </ItemGroup>
   <ItemGroup>
+    <Xml Include="full-scene.xml" />
     <Xml Include="humanoid-A.xml" />
     <Xml Include="humanoid-C.xml" />
     <Xml Include="humanoid-M.xml" />
@@ -108,6 +109,7 @@
     <Xml Include="super-fun-ride.xml">
       <SubType>Designer</SubType>
     </Xml>
+    <Xml Include="swing-ridev2.xml" />
     <Xml Include="two-humanoids.xml" />
   </ItemGroup>
   <ItemGroup>

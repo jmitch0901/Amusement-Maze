@@ -57,6 +57,12 @@
     <Xml Include="plane-ride-copy.xml" />
     <Xml Include="super-fun-ride.xml" />
     <Xml Include="two-humanoids.xml" />
+    <Xml Include="full-scene.xml">
+      <Filter>Source Files</Filter>
+    </Xml>
+    <Xml Include="swing-ridev2.xml">
+      <Filter>Source Files</Filter>
+    </Xml>
   </ItemGroup>
   <ItemGroup>
     <Text Include="maze-50x50.txt">
