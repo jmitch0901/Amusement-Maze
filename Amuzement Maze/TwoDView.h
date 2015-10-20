@@ -21,19 +21,19 @@ class PathCoords{
 	public:
 		int row, col;
 
-		bool operator<(const PathCoords& other) const{
+		/*bool operator<(const PathCoords& other) const{
 			if(row == other.row){
 				return col < other.col;
 			}
 
 			return row < other.row;
-		}
+		}*/
 
 
 
 };
 
-struct CellComparer{
+/*struct CellComparer{
 	bool operator()(const PathCoords& start, const PathCoords& next) const{
 		if(start.row == next.row){
 			return start.col < next.col;
@@ -41,7 +41,7 @@ struct CellComparer{
 
 		return start.row < next.row;
 	}
-};
+};*/
 
 class TwoDView
 {
@@ -84,7 +84,7 @@ class TwoDView
 		int row, col;
 		vector<int> start, end;
 		vector< vector<int> > mazeArr;
-		map<PathCoords,PathCoords, CellComparer> path;
+		vector< vector<PathCoords> > path;
 
 
 		void parseFile(string fileName);
@@ -92,6 +92,7 @@ class TwoDView
 		vector<GLuint> indices;
 		int numOfVertices;
 		void pushWalls(int i, int j, bool walls[4]);
+		void pushPath(int i, int j);
 		bool rectDrawn;
 		vector<VAttribs> vdata;
 		string mazeFileName;

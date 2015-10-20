@@ -50,7 +50,7 @@
                                                                         </set>
                                                                         <object instanceof="box">
                                                                             <material>
-                                                                                <color>1 0 0</color>
+                                                                                <color>1 0 .8</color>
                                                                             </material>
                                                                         </object>
                                                                     </transform>
@@ -61,7 +61,7 @@
                                                                         </set>
                                                                         <object instanceof="box">
                                                                             <material>
-                                                                                <color>1 0 0</color>
+                                                                                <color>1 0 .8</color>
                                                                             </material>
                                                                         </object>
                                                                     </transform>
@@ -73,7 +73,7 @@
                                                                             </set>
                                                                             <object instanceof="box">
                                                                                 <material>
-                                                                                    <color>1 0 0</color>
+                                                                                    <color>1 0 .8</color>
                                                                                 </material>
                                                                             </object>
                                                                         </transform>

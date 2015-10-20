@@ -94,6 +94,9 @@ void TwoDView::initialize(string fileName, string pathFile)
 		}
 	}
 
+
+	pushPath(start[0], start[1]);
+
     
     glGenVertexArrays(1,&vao);
     glBindVertexArray(vao);
@@ -551,6 +554,12 @@ void TwoDView::parsePathFile(string pathFile){
 	ifstream ifs(pathFile);
 	stringstream ss;
 	string line;
+
+	path.resize(row);
+	for(int i = 0; i < row; i++){
+		path[i].resize(col);
+	}
+
 	while(getline(ifs, line)){
 		ss.str(line);
 		PathCoords st, nxt;
@@ -559,8 +568,10 @@ void TwoDView::parsePathFile(string pathFile){
 		ss >> nxt.row;
 		ss >> nxt.col;
 
-		path.insert(st, nxt);
+		path[st.row][st.col] = nxt;
 	}
+
+	ifs.close();
 
 }
 
@@ -587,5 +598,118 @@ void TwoDView::pushWalls(int i, int j, bool walls[4]){
 	if(walls[3]){
 		indices.push_back(bottomLeftVert);
 		indices.push_back(bottomRightVert);
+	}
+}
+
+void TwoDView::pushPath(int i, int j){
+
+	if(!((i == 0 && j == -1) || (i == -1 && j == 0))){
+		int totalVerts = vdata.size() - 1;
+
+		int topLeftVert, topRightVert, bottomLeftVert, bottomRightVert;
+		topLeftVert = i * (col + 1) + j;
+		topRightVert = topLeftVert + 1;
+		bottomLeftVert = topLeftVert + col + 1;
+		bottomRightVert = topLeftVert + col + 2;
+
+		int vertX = 0, vertY = 0;
+
+		if(start[0] == i && start[1] == j){
+			if(i == 0){
+				//top = true;
+				vertY = vdata[topLeftVert].position[1];
+				vertX = (vdata[topLeftVert].position[0] + vdata[topRightVert].position[0]) / 2.0;
+
+			}else if(i == row - 1){
+				//bottom = true;
+				vertY = vdata[bottomLeftVert].position[1];
+				vertX = (vdata[bottomLeftVert].position[0] + vdata[bottomRightVert].position[0]) / 2.0;
+
+			}else if(j == 0){
+				//left = true;
+				vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0;
+				vertX = vdata[topLeftVert].position[0];
+
+			}else if(j == col - 1){
+				//right = true;
+				vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0;
+				vertX = vdata[topRightVert].position[0];
+
+			}
+
+			VAttribs v;
+			vdata.push_back(v);
+			totalVerts = vdata.size() - 1;
+
+			vdata[totalVerts].position[0] = vertX;
+			vdata[totalVerts].position[1] = vertY;
+			vdata[totalVerts].position[2] = 0;
+			vdata[totalVerts].position[3] = 1.0f;
+
+			vdata[totalVerts].color[0] = 1;
+			vdata[totalVerts].color[1] = 0;
+			vdata[totalVerts].color[2] = 0;
+
+			indices.push_back(totalVerts);
+
+
+		} 
+
+		VAttribs v2;
+		vdata.push_back(v2);
+		totalVerts = vdata.size() - 1;
+
+		vdata[totalVerts].position[0] = (vdata[bottomLeftVert].position[0] + vdata[bottomRightVert].position[0]) / 2.0;
+		vdata[totalVerts].position[1] = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0;
+		vdata[totalVerts].position[2] = 0;
+		vdata[totalVerts].position[3] = 1.0f;
+
+		vdata[totalVerts].color[0] = 1;
+		vdata[totalVerts].color[1] = 0;
+		vdata[totalVerts].color[2] = 0;
+
+		indices.push_back(totalVerts);
+		indices.push_back(totalVerts);
+
+		if(i == path[i][j].row - 1){
+			//top exit
+			vertY = vdata[topLeftVert].position[1];
+			vertX = (vdata[topLeftVert].position[0] + vdata[topRightVert].position[0]) / 2.0;
+
+		} else if(i == path[i][j].row + 1){
+			//bottom exit
+			vertY = vdata[bottomLeftVert].position[1];
+			vertX = (vdata[bottomLeftVert].position[0] + vdata[bottomRightVert].position[0]) / 2.0;
+
+		} else if(j == path[i][j].col - 1){
+			//left exit
+			vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0;
+			vertX = vdata[topLeftVert].position[0];
+
+		} else if(j == path[i][j].row + 1){
+			//right exit
+			vertY = (vdata[topLeftVert].position[1] + vdata[bottomLeftVert].position[1]) / 2.0;
+			vertX = vdata[topRightVert].position[0];
+
+		}
+
+		VAttribs v3;
+		vdata.push_back(v3);
+		totalVerts = vdata.size() - 1;
+
+		vdata[totalVerts].position[0] = vertX;
+		vdata[totalVerts].position[1] = vertY;
+		vdata[totalVerts].position[2] = 0;
+		vdata[totalVerts].position[3] = 1.0f;
+
+		vdata[totalVerts].color[0] = 1;
+		vdata[totalVerts].color[1] = 0;
+		vdata[totalVerts].color[2] = 0;
+
+		indices.push_back(totalVerts);
+		if(!((path[i][j].row == 0 && path[i][j].col == -1) || (path[i][j].row == -1 && path[i][j].col == 0))){
+			indices.push_back(totalVerts);
+		}
+		pushPath(path[i][j].row, path[i][j].col);
 	}
 }

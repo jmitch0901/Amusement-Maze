@@ -55,14 +55,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="humanoid-A.xml" />
-    <Xml Include="humanoid-C.xml" />
-    <Xml Include="humanoid-M.xml" />
-    <Xml Include="humanoid-Y.xml" />
-    <Xml Include="humanoid.xml" />
-    <Xml Include="plane-ride-copy.xml" />
     <Xml Include="super-fun-ride.xml" />
-    <Xml Include="two-humanoids.xml" />
     <Xml Include="full-scene.xml">
       <Filter>Source Files</Filter>
     </Xml>
