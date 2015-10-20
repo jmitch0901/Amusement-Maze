@@ -13,7 +13,7 @@
 #include <SFML/Graphics.hpp>
 #include <GL/glew.h>
 #include <SFML/OpenGL.hpp>
-#include "View.h"
+#include "ThreeDView.h"
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -28,7 +28,7 @@ void display(sf::RenderWindow *window);
 void processEvent(sf::Event event,sf::RenderWindow& window);
 void drawText(sf::RenderWindow& window,string text,int x,int y);
 
-View v; //an object to our View class that encapsulates everything that we do.
+ThreeDView v; //an object to our View class that encapsulates everything that we do.
 sf::Font font;
 sf::Clock sfclock;
 int frames;
@@ -36,7 +36,9 @@ double frame_rate;
 bool mousePressed;
 int mouseX,mouseY;
 
-string filename = "two-humanoids.xml";
+int width, height, startX, startY;
+
+string filename = "full-scene.xml";
 
 int main(int argc, char *argv[])
 {
@@ -183,7 +185,17 @@ void display(sf::RenderWindow *window)
 	glClearColor(0,0,0,0);
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT); //this command actually clears the window.
 	glEnable(GL_DEPTH_TEST);
+	glViewport(0,0,width,height);
 	v.draw(); //simply delegate to our view class that has all the data and does all the rendering
+	
+
+	glScissor(startX,startY,width-startX,height-startY);
+	glEnable(GL_SCISSOR_TEST);
+	glClearColor(1,1,1,1);
+	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+	glViewport(startX,startY,width-startX,height-startY);
+	v.draw();
+	glDisable(GL_SCISSOR_TEST);
 
 	if (frames>500)
 	{
@@ -199,7 +211,7 @@ void display(sf::RenderWindow *window)
 
 	str << "Frame rate " << frame_rate;
 	// Draw some text on top of our OpenGL object
-	drawText(window,str.str(),window->getSize().x,20);
+	//drawText(window,str.str(),window->getSize().x,20);
     
 	
 	// Finally, display the rendered frame on screen
@@ -215,12 +227,26 @@ void display(sf::RenderWindow *window)
  **/
 void resize(int w,int h)
 {
-    //delegate to our view class.
+	//delegate to our view class.
     v.resize(w,h);
+	width=w;
+	height=h;
+
+
+
+
+	startX = (2.0f/3.0f)*w;
+	startY = (2.0f/3.0f)*h;
+	
+    
 
     //sets the viewport to cover the entire area of the resized window
     //glViewport(leftx,topy,width,height)
-    glViewport(0,0,w,h);
+    //glViewport(0,0,w,h);
+
+
+	
+	
 }
 
 void init(string& filename)
@@ -235,8 +261,8 @@ void init(string& filename)
 	v.initialize();
 	v.openFile(filename);
 
-	if (!font.loadFromFile("resources/GARA.ttf"))
-		return;
+	//if (!font.loadFromFile("resources/GARA.ttf"))
+		//return;
 
 }
 

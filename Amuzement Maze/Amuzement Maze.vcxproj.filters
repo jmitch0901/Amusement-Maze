@@ -21,7 +21,7 @@
     <ClCompile Include="Scenegraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="View.cpp">
+    <ClCompile Include="ThreeDView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,8 +41,30 @@
     <ClInclude Include="TransformNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="View.h">
+    <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ThreeDView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="swing-ridev2.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="scene-maze.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="full-scene.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="triangles.frag">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="triangles.vert">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
