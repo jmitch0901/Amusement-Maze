@@ -1,3 +1,6 @@
+<!--
+Created by Jonathan Mitchell
+-->
 <scene>
   <instance name="sphere" path="models/sphere" />
   <instance name="box" path="models/box" />

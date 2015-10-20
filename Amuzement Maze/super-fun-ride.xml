@@ -1,3 +1,6 @@
+<!--
+Created by Mitchell Cooper
+-->
 <scene>
     <instance name="sphere" path="models/sphere" />
     <instance name="box" path="models/box" />

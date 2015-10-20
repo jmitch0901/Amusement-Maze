@@ -65,7 +65,7 @@ public:
 private:
     Node *root;
 	float time;
-	TransformNode *central_spin, *ra, *ba, *la, *fa;
+	TransformNode *central_spin, *ra, *ba, *la, *fa, *tn, *tn2;
 	map<string,graphics::Object *> instances;
 	//vector<TransformNode*> animationNodes;
     GLint objectColorLocation,modelviewLocation;
