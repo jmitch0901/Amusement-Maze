@@ -19,7 +19,7 @@ using namespace std;
 ThreeDView::ThreeDView()
 {
     trackballTransform = glm::mat4(1.0);
-	time = 0.0;
+	time = 0.0f;
 }
 
 ThreeDView::~ThreeDView()

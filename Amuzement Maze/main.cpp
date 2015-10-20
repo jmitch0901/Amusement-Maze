@@ -189,11 +189,11 @@ void display(sf::RenderWindow *window)
 	v.draw(); //simply delegate to our view class that has all the data and does all the rendering
 	
 
-	glScissor(startX,startY,width,height);
+	glScissor(startX,startY,width-startX,height-startY);
 	glEnable(GL_SCISSOR_TEST);
 	glClearColor(1,1,1,1);
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-	glViewport(startX,startY,width,height);
+	glViewport(startX,startY,width-startX,height-startY);
 	v.draw();
 	glDisable(GL_SCISSOR_TEST);
 
