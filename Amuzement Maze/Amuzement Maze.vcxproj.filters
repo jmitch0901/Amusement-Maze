@@ -21,7 +21,10 @@
     <ClCompile Include="Scenegraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="View.cpp">
+    <ClCompile Include="ThreeDView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoDView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,54 +44,28 @@
     <ClInclude Include="TransformNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="View.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ThreeDView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TwoDView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="humanoid.xml">
+    <Xml Include="super-fun-ride.xml" />
+    <Xml Include="full-scene.xml">
       <Filter>Source Files</Filter>
     </Xml>
-    <Xml Include="humanoid-A.xml">
-      <Filter>Source Files</Filter>
-    </Xml>
-    <Xml Include="humanoid-M.xml">
-      <Filter>Source Files</Filter>
-    </Xml>
-    <Xml Include="humanoid-Y.xml">
-      <Filter>Source Files</Filter>
-    </Xml>
-    <Xml Include="plane-ride.xml">
-      <Filter>Source Files</Filter>
-    </Xml>
-    <Xml Include="two-humanoids.xml">
-      <Filter>Source Files</Filter>
-    </Xml>
-    <Xml Include="humanoid-C.xml">
-      <Filter>Source Files</Filter>
-    </Xml>
-    <Xml Include="plane-ride-copy.xml">
+    <Xml Include="swing-ridev2.xml">
       <Filter>Source Files</Filter>
     </Xml>
   </ItemGroup>
   <ItemGroup>
-    <Object Include="models\bottle.obj">
+    <Text Include="maze-50x50.txt">
       <Filter>Resource Files</Filter>
-    </Object>
-    <Object Include="models\box.obj">
-      <Filter>Resource Files</Filter>
-    </Object>
-    <Object Include="models\cone.obj">
-      <Filter>Resource Files</Filter>
-    </Object>
-    <Object Include="models\cylinder.obj">
-      <Filter>Resource Files</Filter>
-    </Object>
-    <Object Include="models\sphere.obj">
-      <Filter>Resource Files</Filter>
-    </Object>
+    </Text>
   </ItemGroup>
 </Project>
