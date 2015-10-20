@@ -2,6 +2,7 @@
 #define NODE_H
 
 #define GLM_FORCE_RADIANS
+
 #include <string>
 #include <map>
 #include <stack>
@@ -57,6 +58,11 @@ public:
 	{
 		bbDraw = d;
 	}
+
+	string getName(){
+		return name;
+	}
+
 
 protected:
 	Node *parent;

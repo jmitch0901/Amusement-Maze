@@ -1,6 +1,7 @@
 #include "Scenegraph.h"
 #include <stack>
 #include "TransformNode.h"
+#include <iostream>
 #include "GroupNode.h"
 using namespace std;
 #include <glm/gtc/matrix_transform.hpp>
@@ -63,9 +64,15 @@ void Scenegraph::initAnimate(){
 	fa = dynamic_cast<TransformNode *>(root->getNode("front-amusement-arm"));
 }
 
-void Scenegraph::animate2(float time)
+void Scenegraph::animate(float time)
 {
+	TransformNode *tn2 = dynamic_cast<TransformNode *>(root->getNode("transform-movable-stem"));
 
+	if(tn2!=NULL){
+		
+		tn2->setAnimationTransform(glm::translate(glm::mat4(1.0f),glm::vec3(0,glm::sin(time)*30,0)));
+	}
+	
 	float PI = 3.14159f;
 
 	//TransformNode* central_spin = dynamic_cast<TransformNode *>(root->getNode("animate-me-m8"));
@@ -91,6 +98,13 @@ void Scenegraph::animate2(float time)
 	if(fa!=NULL){
 		fa->setAnimationTransform(glm::rotate(glm::mat4(1.0),cos(time/50.0f)*(PI / 12.0f) - (PI / 12.0f), glm::vec3(-1,0,0)));
 	}
+	tn2 = NULL;
+	TransformNode *tn = dynamic_cast<TransformNode*>(root->getNode("transform-top-disk"));
+	if(tn!=NULL){
 
+		tn->setAnimationTransform(glm::rotate(glm::mat4(1.0f),-1.0f * time,glm::vec3(0,1,0)));
+	}
+
+	tn = NULL;
 }
 

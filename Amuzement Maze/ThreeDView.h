@@ -4,8 +4,8 @@
  *
 */
 
-#ifndef VIEW_H
-#define VIEW_H
+#ifndef THREE_D_VIEW_H
+#define THREE_D_VIEW_H
 //Remember that glew will not include all the opengl functions, so you must include both glew and gl
 //IF YOU DO THIS, REMEMBER TO INCLUDE GLEW BEFORE GL, OTHERWISE YOU WILL GET COMPILING ERRORS!
 #include <GL/glew.h>
@@ -29,7 +29,7 @@ using namespace std;
 
 #include <utils/Object.h>
 
-class View
+class ThreeDView
 {
     //we need this #define for convenience in some OpenGL 4 functions. As you can see it is just a typecast
 #define BUFFER_OFFSET(offset) ((void *)(offset))
@@ -43,8 +43,8 @@ class View
 
 
 public:
-    View();
-    ~View();
+    ThreeDView();
+    ~ThreeDView();
 
     //the delegation functions called from the glut functions in main.cpp
     void resize(int w,int h);
